@@ -1,0 +1,37 @@
+#include<stdio.h>
+#include<math.h>
+float input(float x[])
+{
+	printf("Enter the coefficients a,b and c :\n");
+	scanf("%f %f %f",&x[0],&x[1],&x[2]);
+};
+float compute(float p[],float *d)
+{
+		*d=(p[1]*p[1])-(4*p[0]*p[2]);
+};
+float output(float q[],float d)
+{
+	float r1,r2;
+	if(d>0)
+	{
+		r1=(-q[1]+sqrt(d))/(2*q[0]);
+		r2=(-q[1]-sqrt(d))/(2*q[0]);
+		printf("The two roots are:\n Root1=%f and Root2=%f",r1,r2);
+	}
+	else if(d==0)
+	{
+		r1=(-q[1])/(2*q[0]);
+		printf("Since the discriminant is zero, The only root is : %f",r1);
+	}
+	else
+	{
+		printf("The roots are imaginary !!");
+	}
+};
+int main()
+{
+	float a[3],d;
+	input(a);
+	compute(a,&d);
+	output(a,d);
+}
