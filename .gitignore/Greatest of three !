@@ -1,0 +1,28 @@
+#include<stdio.h>
+void read_numbers(float a[])
+{
+    printf("Enter three numbers : \n");
+    scanf("%f %f %f",&a[0],&a[1],&a[2]);
+    return (a);
+}
+void largest_number(float b[])
+{
+    if(b[0]>=b[1] && b[0]>=b[2])
+    {
+        printf("The largest number is : %f",b[0]);
+    }
+    else if(b[1]>=b[0] && b[1]>=b[2])
+    {
+        printf("The largest number is : %f",b[1]);
+    }
+    else
+    {
+        printf("The largest number is : %f",b[2]);
+    }
+}
+void main()
+{
+    float x[3];
+    read_numbers(x);
+    largest_number(x);
+}
