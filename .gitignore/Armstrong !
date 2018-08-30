@@ -1,0 +1,47 @@
+#include<stdio.h>
+#include<math.h>
+int input()
+{
+    int n;
+    printf("Enter the positive integer : ");
+    scanf("%d",&n);
+    return n;
+}
+int check_arm(int n)
+{   
+    int p,arm,i=0;
+    arm=n;
+    while(n!=0)
+    {
+        n/=10;
+        i++;
+    }
+    n=arm;
+    int a=0;
+    while(n!=0)
+    {
+        p=n%10;
+        a=a+pow(p,i);
+        n/=10;
+    }
+    return a;
+    
+}
+int output(int n,int a)
+{
+    if(a==n)
+    {
+        printf("Entered number is Armstrong !!");
+    }
+    else
+    {
+        printf("Entered number is not an Armstrong !");
+    }
+}
+int main()
+{
+    int n,a;
+    n=input();
+    a=check_arm(n);
+    output(n,a);
+}
