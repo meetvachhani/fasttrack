@@ -1,0 +1,58 @@
+#include<stdio.h>
+int input(char *v,int *t)
+{	
+	printf("Enter the vehicle type (Car:c, Bus:b, Tempo:t) : ");
+	scanf(" %c",v);
+	printf("\nEnter the parking time (in hours) : ");
+	scanf("%d",t); 
+}
+int fare(char v,int t)
+{	
+	int fare;
+	if(v=='c')
+	{
+		if(t<=2)
+		{
+			fare=20*t;
+		}
+		else
+		{
+			fare=40+30*(t-2);
+		}
+	}
+	if(v=='b')
+	{
+		if(t<=4)
+		{
+			fare=40*t;
+		}
+		else
+		{
+			fare=160+50*(t-4);
+		}
+	}
+	if(v=='t')
+	{
+		if(t<=3)
+		{
+			fare=30*t;
+		}
+		else
+		{
+			fare=90+40*(t-3);
+		}
+	}
+	return (fare);	
+}
+void output_fare(int f)
+{
+	printf("The parking fare is : RS.%d",f);
+}
+void main()
+{	
+	char v;
+	int t,f;
+	input(&v,&t);
+	f=fare(v,t);
+	output_fare(f);
+}
