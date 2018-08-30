@@ -12,19 +12,19 @@ int grades_output(int m)
     {
         printf("Grade : A1");
     }
-    else if(m>=85 && m<95)
+    else if(m>=85)
     {
         printf("Grade : A2");
     }
-    else if(m>=75 && m<85)
+    else if(m>=75)
     {
         printf("Grade : B1");
     }
-    else if(m>=60 && m<75)
+    else if(m>=60)
     {
         printf("Grade : B2");
     }
-    else if(m>=45 && m<60)
+    else if(m>=45)
     {
         printf("Grade : C1");
     }
@@ -32,15 +32,15 @@ int grades_output(int m)
     {
         printf("Grade : C2");
     }
-    else if(m>=35 && m<40)
+    else if(m>=35)
     {
         printf("Grade : D1");
     }
-    else if(m>=30 && m<35)
+    else if(m>=30)
     {
         printf("Grade : D2");
     }
-    else if(m>=0 && m<30)
+    else if(m>=0)
     {
         printf("Grade : E1 (FAIL)");
     }
