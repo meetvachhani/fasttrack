@@ -28,7 +28,7 @@ int grades_output(int m)
     {
         printf("Grade : C1");
     }
-    else if(m>=40 && m<45)
+    else if(m>=40)
     {
         printf("Grade : C2");
     }
