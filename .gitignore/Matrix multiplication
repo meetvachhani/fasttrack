@@ -1,0 +1,77 @@
+#include<stdio.h>
+int input_rm(int*n,int*m,int*a,int*b)
+{
+	printf("Enter the no. of row and column of the matrix(1) : \n");
+	scanf("%d %d",n,m);
+	printf("Enter the no. of row and column of the matrix(2) : \n");
+	scanf("%d%d",a,b);
+}
+int input(int n,int m,int a,int b,float a1[n][m],float a2[a][b])
+{
+
+	printf("Enter the numbers into matrix(1) : \n");
+	for(int i=0;i<n;i++)
+	{
+		for(int j=0;j<m;j++)
+		{
+			scanf("%f",&a1[i][j]);
+		}
+		printf("\n");
+	}
+	printf("Enter the numbers into matrix(2) : \n");
+	for(int i=0;i<a;i++)
+	{
+		for(int j=0;j<b;j++)
+		{
+			scanf("%f",&a2[i][j]);
+		}
+		printf("\n");
+	}
+}
+int matrix(int a,int b,int n, int m,float a3[m][a],float a1[n][m],float a2[a][b])
+{
+	int sum=0;
+	for(int i=0;i<n;i++)
+	{
+		for(int j=0;j<b;j++)
+		{
+			for(int k=0;k<a;k++)
+			{
+				sum=sum+a1[i][k]*a2[k][j];
+			}
+			a3[i][j]=sum;
+			sum=0;
+		}
+	}
+}
+int output(int p,int q,float a3[p][q])
+{
+	if(p!=q)
+	{
+		printf("Enter the valid rows and column !!");
+	}
+	else 
+	{
+		printf("The product of two matrix is : \n");
+		for(int i=0;i<p;i++)
+		{
+			for(int j=0;j<q;j++)
+			{
+				printf("%f ",&a3[i][j]);
+			}
+			printf("\n");
+		}
+	}
+}
+void main()
+{
+	int a,b,n,m;
+	float a1[10][10],a2[10][10],a3[10][10];
+	input_rm(&n,&m,&a,&b);
+	input(n,m,a,b,a1,a2);
+	matrix(a,b,n,m,a3,a1,a2);	
+	output(m,a,a3);
+}
+
+
+
