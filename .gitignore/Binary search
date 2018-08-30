@@ -2,14 +2,14 @@
 void input(int a[],int *n,int *k)
 {
     printf("Enter the number of elements : ");
-    scanf("%d",&*n);
+    scanf("%d",n);
     printf("Enter the elements : \n");
     for(int i=1;i<=*n;i++)
     {
         scanf("%d",&a[i]);
     }
     printf("Enter the key element : ");
-    scanf("%d",&*k);
+    scanf("%d",k);
 }
 void b_search(int a[],int n,int k,int *mid)
 {
