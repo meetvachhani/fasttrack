@@ -1,0 +1,24 @@
+#include<stdio.h>
+int input(int *n)
+{
+	printf("Enter the number of terms : ");
+	scanf("%d",n);
+}
+int series(int n)
+{
+	int f,a=0,b=1;
+	printf("The Fibonacci series : ");
+	for(int i=1;i<=n;i++)
+	{
+		printf(" %d",a);
+		f=a+b;
+		a=b;
+		b=f;
+	}
+}
+int main()
+{
+	int n;
+	input(&n);
+	series(n);
+}
