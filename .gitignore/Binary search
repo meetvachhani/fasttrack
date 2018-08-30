@@ -34,7 +34,7 @@ void output(int a[],int mid,int k)
 {
     if(a[mid]==k)
     {
-        printf("Key Element is found at location : %d",mid);
+        printf("Key Element %d is found at location : %d",k,mid);
     }
     else
     {
