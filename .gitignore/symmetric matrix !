@@ -1,47 +1,42 @@
 #include<stdio.h>
-int input(int a[10][10],int *n)
+int input(int *n)
 {
     printf("Enter the size of square matrix : ");
     scanf("%d",n);
+}
+int input_mat(int n,int a[n][n])
+{
     printf("Enter the numbers in matrix : \n");
-    for(int i=0;i<*n;i++)
+    for(int i=0;i<n;i++)
     {
-        for(int j=0;j<*n;j++)
+        for(int j=0;j<n;j++)
         {    
-            scanf("%d",&a[i][j]);
+            scanf("%f",&a[i][j]);
         }
         printf("\n");
     }
 }
 int check_sym(int n,int a[n][n])
 {
-    int p=0,b[10][10];
+    int p=0;
     for(int i=0;i<n;i++)
     {
         for(int j=0;j<n;j++)
         {
-            b[j][i]=a[i][j];
-        }
-    }
-    for(int i=0;i<n;i++)
-    {
-        for(int j=0;j<n;j++)
-        {
-            if(a[i][j]!=b[i][j])
+            if((a[i][j])!=(a[j][i]))
             {
                 p=1;
                 break;
             }
         }
     }
-    printf("p : %d",p);
     return p;
 }
 int output(int p)
 {
     if(p==1)
     {
-        printf("The matrix is not symmetric !");
+        printf("The matrix is asymmetric !");
     }
     else
     {
@@ -50,12 +45,10 @@ int output(int p)
 }
 int main()
 {
-    int a[10][10],n,p;
-    input(a,&n);
-    p=check_sym(a,n);
-    printf("p : %d",p);
+    int n,p,a[10][10];
+    input(&n);
+    input_mat(n,a);
+    p=check_sym(n,a);
     output(p);
 }
-
-
 
