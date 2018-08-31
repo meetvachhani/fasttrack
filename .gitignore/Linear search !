@@ -11,19 +11,18 @@ void input(int a[],int *n,int *k)
     printf("Enter the key element : ");
     scanf("%d",k);
 }
-void l_search(int a[],int n,int k,int *p,int *q)
+int l_search(int a[],int n,int k,int *q)
 {
-    *p=1;
-    for(int i=0;i<n;i++)
+    int i;
+    for(i=1;i<=n;i++)
     {
-        *p++;
-        if(k==a[i])
+        if(a[i]==k)
         {
             *q=1;
             break;
         }
-        
     }
+    return i;
 }
 void output(int a[],int p,int q,int k)
 {
@@ -40,6 +39,6 @@ int main()
 {
     int a[50],n,k,p,q=0;
     input(a,&n,&k);
-    l_search(a,n,k,&p,&q);
+    p=l_search(a,n,k,&q);
     output(a,p,q,k);
 }
