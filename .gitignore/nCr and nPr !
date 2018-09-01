@@ -33,8 +33,14 @@ int main()
 {
     int n,r,ncr,npr;
     input(&n,&r);
-    ncr=nCr(n,r);
-    npr=nPr(n,r);
-    output(ncr,npr);
-    
+    if(n<r)
+    {
+        printf("Value of n should be greater than r !!");
+    }
+    else
+    {
+        ncr=nCr(n,r);
+        npr=nPr(n,r);
+        output(ncr,npr);
+    }
 }
