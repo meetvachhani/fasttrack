@@ -25,7 +25,7 @@ void b_search(int a[],int n,int k,int *mid)
         }
         else
         {
-            end=*mid+1;
+            end=*mid-1;
         }
         *mid=(beg+end)/2;
     }
