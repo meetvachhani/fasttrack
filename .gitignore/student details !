@@ -1,0 +1,65 @@
+#include<stdio.h>
+struct student
+{     
+    int roll,marks;
+    char name[100],dept[20],grade;
+};
+void num(int *n)
+{    
+    printf("Enter the number of students : ");
+    scanf("%d",n);
+}
+void info(int n,struct student a[])
+{     
+    int p=1;
+    for(int i=0;i<n;i++)
+    {
+        printf("-------STUDENT INFO (%d)-------\n",p);
+        printf("Enter the Name : ");
+        scanf("%s",&a[i].name);
+        printf("\nEnter the Roll number : ");
+        scanf("%d",&a[i].roll);
+        printf("\nEnter the Department : ");
+        scanf("%s",&a[i].dept);
+        printf("\nEnter the Marks : ");
+        scanf("%d",&a[i].marks);
+        printf("\nEnter the Grade : \n");
+        printf("Grading system : \nA1 for 90 marks and above\nA2 for 80 marks and above\nB1 for 70 marks and above\nB2 for 60 marks and above\nC1 for 40 marks and above\nC2 for Fail !\n");
+        scanf("%s",&a[i].grade);
+        p++;
+    }
+}
+void roll(int *d)
+{    
+    printf("\nEnter the roll number of the student whose details you want : ");
+    scanf("%d",d);
+}
+int search(int d,int n,struct student a[])
+{
+    for(int i=0;i<n;i++)
+    {
+        if(d==a[i].roll)
+        {
+            return i;
+        }
+    }
+}
+void details(int i,struct student a[])
+{   
+    printf("*****STUDENT'S DETAILS*******");
+    printf("\nName : %s",a[i].name);
+    printf("\nRoll number : %d",a[i].roll);
+    printf("\nDepartment : %s",a[i].dept);
+    printf("\nMarks : %d",a[i].marks);
+    printf("\nGrade : %c",a[i].grade);
+}
+int main()
+{
+    int n,d,i;
+    num(&n);
+    struct student a[n];
+    info(n,a);
+    roll(&d);
+    i=search(d,n,a);
+    details(i,a);
+}
