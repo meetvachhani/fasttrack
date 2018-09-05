@@ -23,8 +23,8 @@ void info(int n,struct student a[])
         scanf("%s",&a[i].dept);
         printf("\nEnter the Marks : ");
         scanf("%d",&a[i].marks);
-        printf("\nEnter the Grade : \n");
-        printf("Grading system : \nA1 for 90 marks and above\nA2 for 80 marks and above\nB1 for 70 marks and above\nB2 for 60 marks and above\nC1 for 40 marks and above\nC2 for Fail !\n");
+        printf("\nGrading system : \nA : 90+ marks\nB : 80+ marks\nC : 70+ marks\nD : 60+ marks\nE : 40+ marks\nF : Fail !\n");
+        printf("\nEnter the Grade : ");
         scanf("%s",&a[i].grade);
         p++;
     }
