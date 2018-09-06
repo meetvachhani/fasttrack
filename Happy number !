@@ -1,0 +1,29 @@
+#include<stdio.h>
+int main()
+{
+    int a,i,sum,n;
+    printf("Enter the number : ");
+    scanf("%d",&a);
+    sum=0;
+    n=a;
+    while(a!=1 && a!=4)
+    {
+        while(a>0)
+        {
+            i=a%10;
+            sum=sum+(i*i);
+            a=a/10;
+        }
+        a=sum;
+        sum=0;
+    }
+    if(a==1)
+    {
+        printf("\nEntered number '%d' is Happy number :)\n",n);
+    }
+    else
+    {
+        printf("\nEntered number '%d' is NOT Happy number :(\n",n);
+    }
+    
+}
